@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hexo博客发布方式]]></title>
+    <url>%2F2019%2F02%2F28%2FHow_to_publish_Hexo_fluently%2F</url>
+    <content type="text"><![CDATA[原始方式。也就是在服务器上编写md文件，然后利用hexo g来生成； 利用github+hook来管理，小锅这里有一篇教程； 其他(hexo-admin or other plugins)。 Hexo-adminHexo-admin官网https://jaredforsyth.com/hexo-admin/ 安装找到自己的博客根目录，运行npm进行安装。1npm install hexo-admin --save 参考 如何优雅地发布Hexo博客 https://www.jianshu.com/p/68e727dda16d]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[New Start]]></title>
+    <url>%2F2019%2F02%2F26%2FHexo_articles%2F</url>
+    <content type="text"><![CDATA[1、创建文章a. 在hexo下创建一个新的文章1hexo new "文章名称" b. 文章基本设置12345678910---title: CentOS7下Tomcat启动慢的原因及解决方案date: 2017-12-02 21:01:24comments: true #是否可评论toc: true #是否显示文章目录categories: "云服务器" #分类tags: #标签 - centOS - tomcat--- 2、创建标签a. 创建标签页面1hexo new page tags b. 基本设置123title: tagsdate: 2017-12-02 21:01:24type: "tags" 3、创建分类a. 创建分类页面1hexo new page categories b. 基本设置123title: categoriesdate: 2017-12-02 21:01:24type: "categories"]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>文章格式</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F02%2F24%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
