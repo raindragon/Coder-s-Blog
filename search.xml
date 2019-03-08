@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[不错的“网站编程”教程网站]]></title>
+    <url>%2F2019%2F03%2F08%2FWeb_Coding_Lectures%2F</url>
+    <content type="text"><![CDATA[自强学堂发现的不错的网站建设类的在线教程网站，对前端、后端、HTML5、CSS、正则表达式感兴趣的小伙伴可以在这里得到帮助！网址：www.ziqiangxuetang.com]]></content>
+      <categories>
+        <category>As Coder</category>
+        <category>Web Coding</category>
+      </categories>
+      <tags>
+        <tag>Web Coding</tag>
+        <tag>Lectures</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo博客发布方式]]></title>
     <url>%2F2019%2F02%2F28%2FHow_to_publish_Hexo_fluently%2F</url>
     <content type="text"><![CDATA[原始方式。也就是在服务器上编写md文件，然后利用hexo g来生成； 利用github+hook来管理，小锅这里有一篇教程； 其他(hexo-admin or other plugins)。 Hexo-adminHexo-admin官网https://jaredforsyth.com/hexo-admin/ 安装找到自己的博客根目录，运行npm进行安装。1npm install hexo-admin --save 参考 如何优雅地发布Hexo博客 https://www.jianshu.com/p/68e727dda16d]]></content>
