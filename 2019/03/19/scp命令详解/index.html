@@ -105,18 +105,18 @@
 
 
 
-<meta name="description" content="常用的情况两台机器IP分别为：A.104.238.161.75，B.43.224.34.73。 在A服务器上操作，将B服务器上/home/lk/目录下所有的文件全部复制到本地的/root目录下，命令为：scp -r root@43.224.34.73:/home/lk /root。 具体过程为： 12345678910[root@XX ~]# scp -r root@43.224.34.73:/h">
+<meta name="description" content="常用的情况两台机器IP分别为：A.104.238.161.75，B.43.224.34.73。 在A服务器上操作，将B服务器上/home/lk/目录下所有的文件全部复制到本地的/root目录下，命令为：scp -r root@43.224.34.73:/home/lk /root。">
 <meta name="keywords" content="Linux,scp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SCP命令详解">
 <meta property="og:url" content="https://raindragon.github.io/2019/03/19/scp命令详解/index.html">
 <meta property="og:site_name" content="Raindragon&#39;s Coder Blog">
-<meta property="og:description" content="常用的情况两台机器IP分别为：A.104.238.161.75，B.43.224.34.73。 在A服务器上操作，将B服务器上/home/lk/目录下所有的文件全部复制到本地的/root目录下，命令为：scp -r root@43.224.34.73:/home/lk /root。 具体过程为： 12345678910[root@XX ~]# scp -r root@43.224.34.73:/h">
+<meta property="og:description" content="常用的情况两台机器IP分别为：A.104.238.161.75，B.43.224.34.73。 在A服务器上操作，将B服务器上/home/lk/目录下所有的文件全部复制到本地的/root目录下，命令为：scp -r root@43.224.34.73:/home/lk /root。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-19T11:43:19.152Z">
+<meta property="og:updated_time" content="2019-03-19T11:48:50.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SCP命令详解">
-<meta name="twitter:description" content="常用的情况两台机器IP分别为：A.104.238.161.75，B.43.224.34.73。 在A服务器上操作，将B服务器上/home/lk/目录下所有的文件全部复制到本地的/root目录下，命令为：scp -r root@43.224.34.73:/home/lk /root。 具体过程为： 12345678910[root@XX ~]# scp -r root@43.224.34.73:/h">
+<meta name="twitter:description" content="常用的情况两台机器IP分别为：A.104.238.161.75，B.43.224.34.73。 在A服务器上操作，将B服务器上/home/lk/目录下所有的文件全部复制到本地的/root目录下，命令为：scp -r root@43.224.34.73:/home/lk /root。">
 
 
 
@@ -366,7 +366,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-19T19:43:19+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-19T19:48:50+08:00">
                 2019-03-19
               </time>
             
@@ -446,6 +446,7 @@
       
         <h1 id="常用的情况"><a href="#常用的情况" class="headerlink" title="常用的情况"></a>常用的情况</h1><p>两台机器IP分别为：A.104.238.161.75，B.43.224.34.73。</p>
 <p>在A服务器上操作，将B服务器上/home/lk/目录下所有的文件全部复制到本地的/root目录下，命令为：scp -r <a href="mailto:root@43.224.34.73" target="_blank" rel="noopener">root@43.224.34.73</a>:/home/lk /root。</p>
+<a id="more"></a>
 <p>具体过程为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@XX ~]<span class="comment"># scp -r root@43.224.34.73:/home/lk /root</span></span><br><span class="line">root@43.224.34.73<span class="string">'s password: </span></span><br><span class="line"><span class="string">k2.sql                                                     100%    0     0.0KB/s   00:00    </span></span><br><span class="line"><span class="string">k.zip                                                      100%  176     0.2KB/s   00:00    </span></span><br><span class="line"><span class="string">.bash_history                                              100%   32     0.0KB/s   00:00    </span></span><br><span class="line"><span class="string">.bash_logout                                               100%   18     0.0KB/s   00:00    </span></span><br><span class="line"><span class="string">.bashrc                                                    100%  231     0.2KB/s   00:00    </span></span><br><span class="line"><span class="string">k3.sql                                                     100%    0     0.0KB/s   00:00    </span></span><br><span class="line"><span class="string">.bash_profile                                              100%  193     0.2KB/s   00:00    </span></span><br><span class="line"><span class="string">[root@XX ~]# ls</span></span><br></pre></td></tr></table></figure>
 <p>在A服务器上将/root/lk目录下所有的文件传输到B的/home/lk/cpfile目录下，命令为：scp -r /root/lk <a href="mailto:root@43.224.34.73" target="_blank" rel="noopener">root@43.224.34.73</a>:/home/lk/cpfile。</p>
