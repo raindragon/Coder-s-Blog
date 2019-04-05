@@ -113,16 +113,16 @@
 <meta property="og:site_name" content="Raindragon&#39;s Coder Blog">
 <meta property="og:description" content="利用数据 - 有效性制作的excel下拉列表，如果选项过多，会给选择输入带来不少的麻烦。如果….能输入一个或几个字符，就只显示以这些字符开头的选项（联想式输入）..该多好哦！..高手们用VBA实现，可不懂VBA是何物的你，这个功能也可以实现吗？今天，兰色将分享不用VBA也可以实现联想式输入的技巧。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raindragon.github.io/2019/04/05/assets/动态下拉菜单-1.jpeg">
-<meta property="og:image" content="https://raindragon.github.io/2019/04/05/assets/动态下拉菜单-2.jpeg">
-<meta property="og:image" content="https://raindragon.github.io/2019/04/05/assets/动态下拉菜单-3.jpeg">
-<meta property="og:image" content="https://raindragon.github.io/2019/04/05/assets/动态下拉菜单-4.jpeg">
-<meta property="og:image" content="https://raindragon.github.io/2019/04/05/assets/动态下拉菜单-5.jpeg">
-<meta property="og:updated_time" content="2019-04-05T01:16:38.170Z">
+<meta property="og:image" content="https://raindragon.github.io/2019/04/05/EXCEL动态下拉菜单/动态下拉菜单-1.jpeg">
+<meta property="og:image" content="https://raindragon.github.io/2019/04/05/EXCEL动态下拉菜单/动态下拉菜单-2.jpeg">
+<meta property="og:image" content="https://raindragon.github.io/2019/04/05/EXCEL动态下拉菜单/动态下拉菜单-3.jpeg">
+<meta property="og:image" content="https://raindragon.github.io/2019/04/05/EXCEL动态下拉菜单/动态下拉菜单-4.jpeg">
+<meta property="og:image" content="https://raindragon.github.io/2019/04/05/EXCEL动态下拉菜单/动态下拉菜单-5.jpeg">
+<meta property="og:updated_time" content="2019-04-05T01:49:27.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EXCEL动态下拉菜单">
 <meta name="twitter:description" content="利用数据 - 有效性制作的excel下拉列表，如果选项过多，会给选择输入带来不少的麻烦。如果….能输入一个或几个字符，就只显示以这些字符开头的选项（联想式输入）..该多好哦！..高手们用VBA实现，可不懂VBA是何物的你，这个功能也可以实现吗？今天，兰色将分享不用VBA也可以实现联想式输入的技巧。">
-<meta name="twitter:image" content="https://raindragon.github.io/2019/04/05/assets/动态下拉菜单-1.jpeg">
+<meta name="twitter:image" content="https://raindragon.github.io/2019/04/05/EXCEL动态下拉菜单/动态下拉菜单-1.jpeg">
 
 
 
@@ -372,7 +372,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-04-05T09:16:38+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-05T09:49:27+08:00">
                 2019-04-05
               </time>
             
@@ -444,27 +444,24 @@
 </blockquote>
 <a id="more"></a>
 <h1 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h1><p>单元格为空，打开下拉列表</p>
-<p><img src="../assets/动态下拉菜单-1.jpeg" alt="动态下拉菜单-1"></p>
+<p><img src="/2019/04/05/EXCEL动态下拉菜单/动态下拉菜单-1.jpeg" alt="动态下拉菜单-1"></p>
 <p>输入关键词宝来后，再打开下拉列表。</p>
-<p><img src="../assets/动态下拉菜单-2.jpeg" alt="动态下拉菜单-2"></p>
+<p><img src="/2019/04/05/EXCEL动态下拉菜单/动态下拉菜单-2.jpeg" alt="动态下拉菜单-2"></p>
 <p>上面的效果是你梦想中的功能吧。现在和兰色一起来实现它。</p>
 <h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><h2 id="第1步"><a href="#第1步" class="headerlink" title="第1步"></a>第1步</h2><p>源数据排序。目的是把相似的内容排列在一起。如上图C列所示。</p>
 <h2 id="第2步"><a href="#第2步" class="headerlink" title="第2步"></a>第2步</h2><p>选取A列要设置的区域，右键菜单 - 定义名称。在如图所示的新那建名称窗口中:</p>
 <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">名称：车型</span><br><span class="line">引用位置：</span><br><span class="line">=OFFSET(Sheet1!$C$<span class="number">1</span>,MATCH(Sheet1!A2&amp;<span class="string">"*"</span>,Sheet1!C:C,<span class="number">0</span>)<span class="number">-1</span>,,COUNTIF(Sheet1!C:C,Sheet1!A2&amp;<span class="string">"*"</span>),<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <p>公式说明：</p>
 <ul>
-<li><p>match（）查找输入的字符串在C列的开始位置，&amp;”*”实现模糊查找。</p>
-</li>
-<li><p>countif（）统计以输入字符串开头的车型有多少个</p>
-</li>
-<li><p>offset() 获取开始行数和总行数，用offset生成动态引用区域。</p>
-</li>
+<li>match（）查找输入的字符串在C列的开始位置，&amp;”*”实现模糊查找。</li>
+<li>countif（）统计以输入字符串开头的车型有多少个</li>
+<li>offset() 获取开始行数和总行数，用offset生成动态引用区域。</li>
 </ul>
-<p><img src="../assets/动态下拉菜单-3.jpeg" alt="动态下拉菜单-3"></p>
+<p><img src="/2019/04/05/EXCEL动态下拉菜单/动态下拉菜单-3.jpeg" alt="动态下拉菜单-3"></p>
 <h2 id="第3步"><a href="#第3步" class="headerlink" title="第3步"></a>第3步</h2><p>数据选项卡 -  数据有效性 - 允许“序列”，来源 =车型</p>
-<p><img src="../assets/动态下拉菜单-4.jpeg" alt="动态下拉菜单-4"></p>
+<p><img src="/2019/04/05/EXCEL动态下拉菜单/动态下拉菜单-4.jpeg" alt="动态下拉菜单-4"></p>
 <h2 id="第4步"><a href="#第4步" class="headerlink" title="第4步"></a>第4步</h2><p>在数据有效性窗口中，去掉<strong>“输入无效数据时显示出错警告”</strong>的勾选。</p>
-<p><img src="../assets/动态下拉菜单-5.jpeg" alt="动态下拉菜单-5"></p>
+<p><img src="/2019/04/05/EXCEL动态下拉菜单/动态下拉菜单-5.jpeg" alt="动态下拉菜单-5"></p>
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>今天的技巧用到了offset+match+countif函数，其实在excel中构建动态区域时，总是这三个函数配合实现的。</p>
 
       
@@ -598,7 +595,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -609,7 +606,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
