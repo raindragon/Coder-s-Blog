@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[关于Typora和hexo图片路径的问题]]></title>
+    <url>%2F2019%2F04%2F05%2F%E5%85%B3%E4%BA%8ETypora%E5%92%8Chexo%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[介绍Typora支持图片拖拽、复制粘贴的操作，并且能直接拷贝到对应目录下，这无疑非常方便，不用再有复制图片到对应目录下，然后再定义图片路径的过程。然而，hexo框架只认识根目录下的source以及主题下的img，因此在typora上编辑文本正常显示，但是生成文件之后，无论是localhost:4000还是发布到网站上，都无法正常显示图片。 配置下面简单提一下Typora在路径上的巧妙设置首先，需要在Typora文件-&gt;偏好设置，图片插入的地方选择“拷贝到自定义路径”，因为其他几种方式都是拷贝到当前位置的assets或其他子目录下的，这样hexo肯定找不到。所以你可以在source下建一个assets文件夹，并把拷贝路径设置到这里。然而这还不够，你看到的路径应该类似于这样。 这样导致hexo能找到你网站的根目录下的assets，然而你图片在source目录下，这就尴尬了，我也卡在这里蛮久的。下面点击编辑-&gt;图片工具-&gt;设置图片根目录，把目录设置到../assets/，同时勾选”使用相对路径” 问题就解决啦，你会看到这样的路径 问题完美解决，再也不用愁图片找不到的事情了 。]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo&amp;Typora图片路径</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[EXCEL动态下拉菜单]]></title>
     <url>%2F2019%2F04%2F05%2FEXCEL%E5%8A%A8%E6%80%81%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%2F</url>
     <content type="text"><![CDATA[利用数据 - 有效性制作的excel下拉列表，如果选项过多，会给选择输入带来不少的麻烦。如果….能输入一个或几个字符，就只显示以这些字符开头的选项（联想式输入）..该多好哦！..高手们用VBA实现，可不懂VBA是何物的你，这个功能也可以实现吗？今天，兰色将分享不用VBA也可以实现联想式输入的技巧。 实现效果单元格为空，打开下拉列表 输入关键词宝来后，再打开下拉列表。 上面的效果是你梦想中的功能吧。现在和兰色一起来实现它。 操作步骤第1步源数据排序。目的是把相似的内容排列在一起。如上图C列所示。 第2步选取A列要设置的区域，右键菜单 - 定义名称。在如图所示的新那建名称窗口中: 123名称：车型引用位置：=OFFSET(Sheet1!$C$1,MATCH(Sheet1!A2&amp;"*",Sheet1!C:C,0)-1,,COUNTIF(Sheet1!C:C,Sheet1!A2&amp;"*"),1) 公式说明： match（）查找输入的字符串在C列的开始位置，&amp;”*”实现模糊查找。 countif（）统计以输入字符串开头的车型有多少个 offset() 获取开始行数和总行数，用offset生成动态引用区域。 第3步数据选项卡 - 数据有效性 - 允许“序列”，来源 =车型 第4步在数据有效性窗口中，去掉“输入无效数据时显示出错警告”的勾选。 小结今天的技巧用到了offset+match+countif函数，其实在excel中构建动态区域时，总是这三个函数配合实现的。]]></content>
       <categories>
-        <category>-Senior Office -EXCEL</category>
+        <category>Senior Office</category>
+        <category>EXCEL</category>
       </categories>
       <tags>
-        <tag>-EXCEL</tag>
+        <tag>EXCEL</tag>
       </tags>
   </entry>
   <entry>
