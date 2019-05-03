@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[免费商用无版权素材网站合集(CC0协议)]]></title>
+    <url>%2F2019%2F05%2F03%2F%E5%85%8D%E8%B4%B9%E5%95%86%E7%94%A8%E6%97%A0%E7%89%88%E6%9D%83%E7%B4%A0%E6%9D%90%E7%BD%91%E7%AB%99%E5%90%88%E9%9B%86%2F</url>
+    <content type="text"><![CDATA[CC0：知识共享 Creative Commons 是一个非营利组织，它为人们在版权法基础之上，提供一套简单的、标准化的方式授予他们所创作作品的版权许可。核心为署名（BY）、非商业性（NC）、相同方式共享（SA）、禁止演绎（ND）。 CC SEARCH CC协议下图片搜索引擎 网址：https://search.creativecommons.org/ THE STOCKS 素材合集网站 网址：http://thestocks.im 优设导航 素材合集网站。也有一些教程。 网址：https://hao.uisdc.com wallhaven 壁纸网站。 网址：https://alpha.wallhaven.cc TO BE CONTINUED…]]></content>
+      <categories>
+        <category>Media</category>
+        <category>Materials</category>
+      </categories>
+      <tags>
+        <tag>Materials</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[关于Typora和hexo图片路径的问题]]></title>
     <url>%2F2019%2F04%2F05%2F%E5%85%B3%E4%BA%8ETypora%E5%92%8Chexo%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[介绍Typora支持图片拖拽、复制粘贴的操作，并且能直接拷贝到对应目录下，这无疑非常方便，不用再有复制图片到对应目录下，然后再定义图片路径的过程。然而，hexo框架只认识根目录下的source以及主题下的img，因此在typora上编辑文本正常显示，但是生成文件之后，无论是localhost:4000还是发布到网站上，都无法正常显示图片。 配置Typora图片路径设置首先，需要在Typora文件-&gt;偏好设置，图片插入的地方选择“拷贝到自定义路径”，把目录设置到./${filename}，同时勾选”使用相对路径”。 你会看到这样的路径 Hexo设置插入本地图片需要修改主题_config.yml配置文件post_asset_folder项为true。 使用插件达到插入本地图片，在根目录输入如下命令安装： 1$ npm install hexo-asset-image --save 今后你new 一篇博客时/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹，把图片放到里面即可。 最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片：![你想输入的替代文字](xxxx/图片名.jpg) 小结通过如上的设置，Typora图片路径就与Hexo的设置达到了统一。 问题完美解决 。]]></content>
